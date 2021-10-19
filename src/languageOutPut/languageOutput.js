@@ -134,7 +134,7 @@ class FunctionTplStr {
     if (item.type === undefined || item.type === '*') {
       functionTypeSymbol = this.config.configObj.functionTypeSymbol
     }
-    const typeVal = `${functionParamsShape[0]}${functionTypeSymbol}${functionParamsShape[1]}`
+    const typeVal = functionParamsShape === 'no type'?`${functionTypeSymbol}`:`${functionParamsShape[0]}${functionTypeSymbol}${functionParamsShape[1]}`
     // 默认值没有匹配到param
     if (item.type === undefined && item.param === undefined) {
       return typeVal
